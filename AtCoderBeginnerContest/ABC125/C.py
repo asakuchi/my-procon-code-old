@@ -1,26 +1,25 @@
-#TLE
-
 import fractions
 
 N = int(input())
 A = list(map(int, input().split()))
 
-A.sort(reverse=True)
+left = [0] * (N + 1)
+right = [0] * (N + 1)
+
+for i in range(N):
+    left[i + 1] = fractions.gcd(A[i], left[i])
+
+for i in reversed(range(N)):
+    right[i] = fractions.gcd(A[i], right[i + 1])
 
 max_gcd = 1
 
 for i in range(N):
-    gcd_num = -1
 
-    for j, a in enumerate(A):
-        if i == j:
-            continue
+    l = left[i]
+    r = right[i + 1]
 
-        if gcd_num == -1:
-            gcd_num = a
-            continue
-
-        gcd_num = fractions.gcd(gcd_num, a)
+    gcd_num = fractions.gcd(l, r)
 
     max_gcd = max(max_gcd, gcd_num)
 
