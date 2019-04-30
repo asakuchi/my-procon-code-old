@@ -26,3 +26,11 @@ N, A, B, C = input().split()
 
 # 文字列
 N = input()
+
+# 再起
+import sys
+sys.setrecursionlimit(10000000)
+
+# メモ化
+from functools import lru_cache
+#@lru_cache(maxsize=None)
