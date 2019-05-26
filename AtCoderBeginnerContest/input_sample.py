@@ -27,6 +27,11 @@ N, A, B, C = input().split()
 # 文字列
 N = input()
 
+# 文字列の二重配列
+a = [list(input()) for i in range(H)]
+
+#######################
+
 # 再起
 import sys
 sys.setrecursionlimit(10000000)
