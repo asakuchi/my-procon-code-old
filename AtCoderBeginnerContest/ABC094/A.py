@@ -1,6 +1,6 @@
 A, B, X = map(int, input().split())
 
 if 0 <= X - A <= B:
-    print('Yes')
+    print('YES')
 else:
-    print('No')
+    print('NO')
